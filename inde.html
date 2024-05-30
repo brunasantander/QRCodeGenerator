@@ -49,32 +49,33 @@
     <title>Free Online QR Code Generator</title>
   </head>
   <body>
-    <header class="bg-customBlue p-4 mb-10">
+    <header class="p-4 mb-10 bg-customBlue">
       <div class="max-w-5xl m-auto">
-        <div class="text-xl font-bold text-white">Qr Code Generator</div>
+        <div class="text-xl font-bold text-white">QR Code Generator</div>
       </div>
     </header>
-
+    <img src="img/spinner.svg" alt="" />
     <main>
       <div
-        class="flex flex-col-reverse align-center justify-center p-10 m-auto md:max-w-4xl md:flex-row"
+        class="flex flex-col-reverse align-center justify-center m-auto md:max-w-4xl p-10 md:flex-row"
       >
         <div class="w-full md:w-2/3 mr-24">
           <h1 class="text-3xl font-bold mb-5 md:text-4xl">QR Code Generator</h1>
           <p class="mb-4">
-            O código Qr Code permitem os usuários acessarem os sites com mais
-            facilidade e simplicidade
+            QR Codes allow smartphone users to access your website simply and
+            quickly.
           </p>
           <p>
-            Insira sua url abaixo para gerar seu código qr code e faça o
-            download da imagem
+            Enter your URL below to generate a QR Code and download the image.
           </p>
+
           <form id="generate-form" class="mt-4">
             <input
               id="url"
               type="url"
-              placeholder="Insira sua url"
-              class="w-full border-2 border-gray-200 rounded p-3 text-gray-dark mr-2 focus:outline-none mb-5"
+              placeholder="Enter a URL"
+              class="w-full border-2 border-gray-200 rounded p-3 text-grey-dark mr-2 focus:outline-none mb-5"
+              required
             />
 
             <select
@@ -90,29 +91,28 @@
               <option value="600">600x600</option>
               <option value="700">700x700</option>
             </select>
-
             <button
-              class="bg-gray-600 rouded w-full text-white py-3 px-4 mt-5 houver:bg-black"
+              class="bg-gray-600 rounded w-full text-white py-3 px-4 mt-5 hover:bg-black"
               type="submit"
             >
-              Gerar QR Code
+              Generate QR Code
             </button>
           </form>
         </div>
         <div class="w-full md:w-1/3 self-center">
           <img
+            class="w-1/2 m-auto mb-10 md:w-full"
             src="img/qr-code.svg"
             alt=""
-            class="w-1/2 m-auto mb-10 md:w-full"
           />
         </div>
       </div>
 
-      <!--Generated Qr code-->
       <div
+        id="generated"
         class="max-w-5xl m-auto flex flex-col text-center align-center justify-center mt-20"
       >
-        <!--Spinner-->
+        <!-- Spinner -->
         <div id="spinner" role="status">
           <svg
             class="inline mr-2 w-24 h-24 text-gray-200 animate-spin dark:text-gray-600 fill-pink-600"
@@ -132,7 +132,6 @@
           <span class="sr-only">Loading...</span>
         </div>
 
-        <!--QR code output-->
         <div id="qrcode" class="m-auto"></div>
       </div>
     </main>
